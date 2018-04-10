@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import GeoLoc from '../GeoLocation/Geolocation'
 import './Card.css'
+import API from '../../utils/API';
 
 class Card extends Component {
     constructor(props) {
@@ -13,28 +14,24 @@ class Card extends Component {
             phone: '',
             raiting: '',
             lat: '',
-            long: ''
+            long: '',
+            search: {
+                term: "burritos",
+                geo: {
+                    lat: "29.799975199999995",
+                    long: "-95.42674129999999"
+                }
+            }
         }
-
     }
 
-    
 
     onHandleGetLocation = (lat, long) => {
         console.log(lat,long)
-        this.setState({lat,long})
-        fetch(`https://api.yelp.com/v3/businesses/search?latitude=${lat}&longitude=${long}&term=food&radius=40000`, {
-            headers :{ 
-                'Content-Type' : 'application/json',
-                'Authorization' : 'Bearer EUczAQdNpBVQ28fAZeKs27y0JRuD2X5X5nu7de6rw4OF6hjikD53anu7P6GiDYRpQ3tJwQH_T39ZxscSJ7WDlYWfn0Dwj-J9Y3Sh8q6VP5btlvTDRpl7KgG4jy-9WnYx'
-            },
-            method: 'GET'
-    
-        })
-        .then(results => {
-            console.log(results)
-        })
+        API.getLocalSearch({ search: this.state.search}).then(response => console.log(response.data));
     }
+
+
     
     render() {
         return (

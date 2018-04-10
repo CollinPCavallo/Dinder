@@ -14,7 +14,9 @@ export class GeoLoc extends React.Component {
                             <button onClick={() => {this.props.onHandleGetLocation(this.props.coords.latitude, this.props.coords.longitude)}}>Get Location</button>
                         
                     
-                    : <div>Getting the location data&hellip; </div>;
+                    : <div>Getting the location data&hellip; 
+                        <button onClick={() => {this.props.onHandleGetLocation("", "")}}>Get Location</button>
+                    </div>;
                     
     }
 }
