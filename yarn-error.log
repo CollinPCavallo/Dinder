@@ -1,0 +1,64 @@
+Arguments: 
+  /usr/local/Cellar/node/9.4.0/bin/node /Users/fguti/.yarn/bin/yarn.js run dev-server
+
+PATH: 
+  /Users/fguti/.yarn/bin:/Users/fguti/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/fguti/.yarn/bin:/Users/fguti/.config/yarn/global/node_modules/.bin:/Users/fguti/Library/Android/sdk/tools:/Users/fguti/Library/Android/sdk/platform-tools:/Users/fguti/Library/Android/sdk/tools:/Users/fguti/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.4.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "dinder",
+    "version": "1.0.0",
+    "description": "Finding Dinner Tinder Style",
+    "main": "server/server.js",
+    "dev-server": "\"nodemon server/server.js\" \"cd client && yarn start\" ",
+    "dependencies": {
+      "express": "^4.16.3",
+      "request": "^2.85.0",
+      "request-promise": "^4.2.2"
+    },
+    "devDependencies": {
+      "concurrently": "^3.5.1",
+      "nodemon": "^1.17.3"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/CollinPCavallo/Dinder.git"
+    },
+    "author": "Colin Cavallo",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/CollinPCavallo/Dinder/issues"
+    },
+    "homepage": "https://github.com/CollinPCavallo/Dinder#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command "dev-server" not found.
+      at new MessageError (/Users/fguti/.yarn/lib/cli.js:186:110)
+      at /Users/fguti/.yarn/lib/cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (/Users/fguti/.yarn/lib/cli.js:98:30)
+      at /Users/fguti/.yarn/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/Users/fguti/.yarn/lib/cli.js:23451:28)
+      at /Users/fguti/.yarn/lib/cli.js:95:12
+      at runCommand (/Users/fguti/.yarn/lib/cli.js:87312:22)
+      at Object.<anonymous> (/Users/fguti/.yarn/lib/cli.js:87412:14)

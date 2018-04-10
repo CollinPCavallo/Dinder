@@ -1,0 +1,31 @@
+{
+  "name": "dinder",
+  "version": "1.0.0",
+  "description": "Finding Dinner Tinder Style",
+  "main": "server/server.js",
+  
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "concurrently \"nodemon server/server.js\" \"cd client && yarn start\" ",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CollinPCavallo/Dinder.git"
+  },
+  "author": "Colin Cavallo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CollinPCavallo/Dinder/issues"
+  },
+  "homepage": "https://github.com/CollinPCavallo/Dinder#readme"
+}
