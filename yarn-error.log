@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.4.0/bin/node /Users/fguti/.yarn/bin/yarn.js run dev-server
+  /usr/local/Cellar/node/9.4.0/bin/node /Users/fguti/.yarn/bin/yarn.js run webpack-dev-server
 
 PATH: 
   /Users/fguti/.yarn/bin:/Users/fguti/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/fguti/.yarn/bin:/Users/fguti/.config/yarn/global/node_modules/.bin:/Users/fguti/Library/Android/sdk/tools:/Users/fguti/Library/Android/sdk/platform-tools:/Users/fguti/Library/Android/sdk/tools:/Users/fguti/Library/Android/sdk/platform-tools
@@ -19,8 +19,9 @@ npm manifest:
     "version": "1.0.0",
     "description": "Finding Dinner Tinder Style",
     "main": "server/server.js",
-    "dev-server": "\"nodemon server/server.js\" \"cd client && yarn start\" ",
     "dependencies": {
+      "body-parser": "^1.18.2",
+      "cors": "^2.8.4",
       "express": "^4.16.3",
       "request": "^2.85.0",
       "request-promise": "^4.2.2"
@@ -30,7 +31,9 @@ npm manifest:
       "nodemon": "^1.17.3"
     },
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev-server": "concurrently \"nodemon server/server.js\" \"cd client && yarn start\" ",
+      "start": "node server/server.js"
     },
     "repository": {
       "type": "git",
@@ -51,7 +54,7 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: Command "dev-server" not found.
+  Error: Command "webpack-dev-server" not found.
       at new MessageError (/Users/fguti/.yarn/lib/cli.js:186:110)
       at /Users/fguti/.yarn/lib/cli.js:87307:17
       at Generator.next (<anonymous>)

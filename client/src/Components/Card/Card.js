@@ -46,13 +46,16 @@ class Card extends Component {
     }
 
 
+    onMapLoaded = (userName) => {
+        console.log("The map was loaded", userName);
+    }
     
     render() {
         return (
             <div>
             <GeoLoc onHandleGetLocation={this.onHandleGetLocation}/>
                 <div className='Main'>
-                    <SimpleMap />
+                    <SimpleMap onMapLoaded={this.onMapLoaded} userName={"Ferenc"} location={{ ...this.state.search.geo }}/>
                 </div>
             
             </div>

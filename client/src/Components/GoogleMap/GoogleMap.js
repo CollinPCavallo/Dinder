@@ -4,26 +4,35 @@ import GoogleMapReact from 'google-map-react';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
-  static defaultProps = {
-    center: {
-    lat : 29.79,
-    lng : -95.42
-    },
-    zoom: 11
-  };
+
+  constructor(props){
+    super(props);
+    this.state = {
+      center: {
+        lat: props.location ? parseFloat(props.location.lat) : 0,
+        lng: props.location ? parseFloat(props.location.long) : 0
+      },
+      zoom: 11
+    }
+  }
+
+  componentDidMount = () => {
+    this.props.onMapLoaded("Ferenc is awesome");
+  }
 
   render() {
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          defaultCenter={this.state.center}
+          defaultZoom={this.state.zoom}
         >
+        {this.props.onMapLoaded(this.state.center )}
           <AnyReactComponent
             lat={29.7999751}
             lng={-95.4267412}
-            text={'Kreyser Avrora'}
+            text={this.props.userName}
           />
         </GoogleMapReact>
       </div>
