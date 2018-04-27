@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import GeoLoc from '../GeoLocation/Geolocation'
 import './Card.css'
 import API from '../../utils/API';
-
+import SimpleMap from '../GoogleMap/GoogleMap';
 class Card extends Component {
     constructor(props) {
         super(props)
@@ -52,7 +52,7 @@ class Card extends Component {
             <div>
             <GeoLoc onHandleGetLocation={this.onHandleGetLocation}/>
                 <div className='Main'>
-
+                    <SimpleMap />
                 </div>
             
             </div>
