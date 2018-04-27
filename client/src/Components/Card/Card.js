@@ -7,16 +7,16 @@ class Card extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            picture: '',
-            type: '',
-            link: '',
-            website: '',
-            phone: '',
-            raiting: '',
-            lat: '',
-            long: '',
+            picture: [],
+            type: [],
+            address: [],
+            website: [],
+            phone: [],
+            raiting: [],
+            lat: [],
+            long: [],
             search: {
-                term: "burritos",
+                term: "food",
                 geo: {
                     lat: "29.799975199999995",
                     long: "-95.42674129999999"
@@ -28,7 +28,21 @@ class Card extends Component {
 
     onHandleGetLocation = (lat, long) => {
         console.log(lat,long)
-        API.getLocalSearch({ search: this.state.search}).then(response => console.log(response.data));
+        API.getLocalSearch({ search: this.state.search})
+        .then(response => {
+    this.setState({
+    picture: response.data.businesses[0].image_url,
+    type: response.data.businesses[0].categories[0].title, 
+    address:response.data.businesses[0].location.address1, 
+    website:response.data.businesses[0].url, 
+    phone: response.data.businesses[0].phone,
+    rating: response.data.businesses[0].rating, 
+    lat:response.data.businesses[0].coordinates.latitude, 
+    long:response.data.businesses[0].coordinates.longitude
+    });
+        });
+        
+    console.log(this.state)
     }
 
 
